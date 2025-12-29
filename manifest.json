@@ -1,6 +1,6 @@
 {
-  "name": "Wallace Store",
-  "short_name": "Wallace",
+  "name": "Wallace Supermarket",
+  "short_name": "Wallace Supermarket",
   "description": "Wallace Supermarket",
   "start_url": "/?source=pwa",
   "scope": "/",
