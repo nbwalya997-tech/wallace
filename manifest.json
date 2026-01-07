@@ -1,7 +1,7 @@
 {
-  "name": "Wallace Supermarket",
-  "short_name": "Wallace Supermarket",
-  "description": "Wallace Supermarket",
+  "name": "Mims Supermarket",
+  "short_name": "Mims Supermarket",
+  "description": "Mims Supermarket",
   "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
