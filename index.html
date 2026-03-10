@@ -1,163 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MELTECH | Engineering the Digital Frontier</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@400;600&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000;
-            color: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Young Mail</title>
 
-        .heading-font {
-            font-family: 'Space Grotesk', sans-serif;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-        .yellow-accent { color: #FACC15; }
-        .bg-yellow-accent { background-color: #FACC15; }
-        
-        .hero-gradient {
-            background: radial-gradient(circle at top right, #1a1a1a, #000000);
-        }
+<style>
 
-        .card-hover:hover {
-            transform: translateY(-5px);
-            border-color: #FACC15;
-            transition: all 0.3s ease;
-        }
+body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:#f7f8fc;
+    color:#111;
+}
 
-        .glass-nav {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #333;
-        }
-    </style>
+/* Title */
+
+.header{
+    padding:20px 16px 10px 16px;
+}
+
+.header h2{
+    margin:0;
+    font-size:32px;
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:-0.5px;
+}
+
+/* Slider */
+
+.slider-container{
+    margin:10px 12px;
+    border:1.5px solid #e3e6f0;
+    border-radius:14px;
+    overflow:hidden;
+    position:relative;
+}
+
+.slide{
+    display:none;
+}
+
+.slide img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+/* Dots */
+
+.dots{
+    position:absolute;
+    bottom:10px;
+    width:100%;
+    text-align:center;
+}
+
+.dot{
+    height:8px;
+    width:8px;
+    margin:0 4px;
+    background:#ffffffcc;
+    border-radius:50%;
+    display:inline-block;
+}
+
+.active{
+    background:#ffffff;
+}
+
+/* Categories */
+
+.categories{
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding:14px 12px;
+}
+
+.category{
+    flex:0 0 auto;
+    padding:8px 14px;
+    border-radius:10px;
+    border:1px solid #e4e6ee;
+    background:white;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* News cards */
+
+.news-list{
+    padding:0 12px 20px 12px;
+}
+
+.news-card{
+    background:white;
+    border-radius:14px;
+    margin-bottom:14px;
+    overflow:hidden;
+    box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+.news-card img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+}
+
+.news-content{
+    padding:12px;
+}
+
+.news-meta{
+    font-size:12px;
+    color:#6b6f7b;
+    margin-bottom:6px;
+}
+
+.news-title{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.news-desc{
+    font-size:13px;
+    color:#555;
+}
+
+</style>
 </head>
+
 <body>
 
-    <nav class="fixed w-full z-50 glass-nav">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-yellow-accent flex items-center justify-center rounded">
-                    <span class="text-black font-bold">M</span>
-                </div>
-                <span class="text-2xl font-bold tracking-tighter heading-font">MEL<span class="yellow-accent">TECH</span></span>
-            </div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#" class="hover:text-yellow-400 transition">Development</a>
-                <a href="#" class="hover:text-yellow-400 transition">Network</a>
-                <a href="#" class="hover:text-yellow-400 transition">Cybersecurity</a>
-                <a href="#" class="hover:text-yellow-400 transition">Database</a>
-            </div>
-            <button class="bg-yellow-accent text-black px-5 py-2 rounded-full font-bold text-sm hover:bg-white transition">
-                CONNECT_NODE
-            </button>
-        </div>
-    </nav>
+<div class="header">
+<h2>Young Mail</h2>
+</div>
 
-    <section class="relative pt-32 pb-20 hero-gradient overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center">
-            <div class="lg:w-1/2 z-10">
-                <div class="inline-block px-3 py-1 border border-yellow-500/30 rounded-full mb-6">
-                    <span class="text-yellow-500 text-xs font-bold tracking-widest uppercase tracking-widest uppercase">System Status: Operational</span>
-                </div>
-                <h1 class="text-6xl lg:text-8xl font-bold heading-font leading-tight mb-6">
-                    BUILD. <br> <span class="yellow-accent underline decoration-4">SECURE.</span> <br> SCALE.
-                </h1>
-                <p class="text-gray-400 text-lg mb-8 max-w-md">
-                    The ultimate ecosystem for web architects, network engineers, and data guardians. 
-                    Deploy faster, secure deeper.
-                </p>
-                <div class="flex space-x-4">
-                    <a href="#" class="bg-white text-black px-8 py-4 font-bold rounded hover:bg-yellow-400 transition">Get Started</a>
-                    <a href="#" class="border border-white/20 px-8 py-4 font-bold rounded hover:bg-white/10 transition">Documentation</a>
-                </div>
-            </div>
-            <div class="lg:w-1/2 mt-12 lg:mt-0 relative">
-                <div class="absolute -top-10 -right-10 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl"></div>
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" 
-                     alt="Tech Interface" 
-                     class="rounded-lg shadow-2xl border border-white/10 grayscale hover:grayscale-0 transition duration-700">
-            </div>
-        </div>
-    </section>
+<!-- Slider -->
 
-    <section class="py-24 bg-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16">
-                <h2 class="text-3xl font-bold heading-font mb-2 uppercase tracking-tighter">Core Specializations</h2>
-                <div class="w-20 h-1 bg-yellow-accent"></div>
-            </div>
+<div class="slider-container">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <div class="p-8 border border-white/10 bg-[#0a0a0a] card-hover">
-                    <i class="fa-solid fa-code text-4xl yellow-accent mb-6"></i>
-                    <h3 class="text-xl font-bold mb-3">Web Development</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Full-stack architecture with a focus on React, Node, and high-performance scalability.</p>
-                </div>
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c">
+</div>
 
-                <div class="p-8 border border-white/10 bg-[#0a0a0a] card-hover">
-                    <i class="fa-solid fa-network-wired text-4xl yellow-accent mb-6"></i>
-                    <h3 class="text-xl font-bold mb-3">Network Engineering</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Infrastructure design, SD-WAN implementation, and low-latency optimization.</p>
-                </div>
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1495020689067-958852a7765e">
+</div>
 
-                <div class="p-8 border border-white/10 bg-[#0a0a0a] card-hover">
-                    <i class="fa-solid fa-shield-halved text-4xl yellow-accent mb-6"></i>
-                    <h3 class="text-xl font-bold mb-3">Cybersecurity</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Penetration testing, zero-trust architecture, and threat mitigation strategies.</p>
-                </div>
+<div class="slide">
+<img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167">
+</div>
 
-                <div class="p-8 border border-white/10 bg-[#0a0a0a] card-hover">
-                    <i class="fa-solid fa-database text-4xl yellow-accent mb-6"></i>
-                    <h3 class="text-xl font-bold mb-3">Database Admin</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Advanced SQL/NoSQL management, data integrity, and complex migrations.</p>
-                </div>
+<div class="dots">
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
 
-            </div>
-        </div>
-    </section>
+</div>
 
-    <section class="py-12 bg-yellow-accent text-black">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="text-4xl font-black heading-font">500+</div>
-                <div class="text-xs uppercase font-bold tracking-widest">Nodes Deployed</div>
-            </div>
-            <div>
-                <div class="text-4xl font-black heading-font">99.9%</div>
-                <div class="text-xs uppercase font-bold tracking-widest">Uptime Record</div>
-            </div>
-            <div>
-                <div class="text-4xl font-black heading-font">1.2M</div>
-                <div class="text-xs uppercase font-bold tracking-widest">Threats Blocked</div>
-            </div>
-            <div>
-                <div class="text-4xl font-black heading-font">24/7</div>
-                <div class="text-xs uppercase font-bold tracking-widest">Kernel Support</div>
-            </div>
-        </div>
-    </section>
+<!-- Categories -->
 
-    <footer class="py-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-sm text-gray-500 mb-6 md:mb-0">
-                &copy; 2026 MELTECH SYSTEMS. ALL RIGHTS RESERVED. // ENCRYPTED_CONNECTION
-            </div>
-            <div class="flex space-x-6 text-xl">
-                <a href="#" class="hover:text-yellow-400 transition"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="hover:text-yellow-400 transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" class="hover:text-yellow-400 transition"><i class="fa-brands fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
+<div class="categories">
+
+<div class="category">Tech</div>
+<div class="category">Campus</div>
+<div class="category">Music</div>
+<div class="category">Sports</div>
+<div class="category">Startups</div>
+<div class="category">Culture</div>
+
+</div>
+
+<!-- News Cards -->
+
+<div class="news-list">
+
+<div class="news-card">
+
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+
+<div class="news-content">
+
+<div class="news-meta">
+Tech • 5 min read
+</div>
+
+<div class="news-title">
+Students building AI apps are changing campus innovation
+</div>
+
+<div class="news-desc">
+Young developers across universities are building practical AI tools solving real student problems.
+</div>
+
+</div>
+
+</div>
+
+<div class="news-card">
+
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f">
+
+<div class="news-content">
+
+<div class="news-meta">
+Music • Trending
+</div>
+
+<div class="news-title">
+Why Gen Z is rediscovering vinyl records
+</div>
+
+<div class="news-desc">
+Music lovers between 16–25 are bringing vinyl culture back with a modern twist.
+</div>
+
+</div>
+
+</div>
+
+<div class="news-card">
+
+<img src="https://images.unsplash.com/photo-1521417531039-0f6c2b6b7c7e">
+
+<div class="news-content">
+
+<div class="news-meta">
+Campus • Today
+</div>
+
+<div class="news-title">
+Top productivity habits for students in 2026
+</div>
+
+<div class="news-desc">
+Simple daily habits that help students stay ahead without burnout.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let slideIndex=0;
+const slides=document.querySelectorAll(".slide");
+const dots=document.querySelectorAll(".dot");
+
+function showSlides(){
+
+slides.forEach(s=>s.style.display="none");
+dots.forEach(d=>d.classList.remove("active"));
+
+slideIndex++;
+
+if(slideIndex>slides.length){
+slideIndex=1;
+}
+
+slides[slideIndex-1].style.display="block";
+dots[slideIndex-1].classList.add("active");
+
+setTimeout(showSlides,4000);
+}
+
+showSlides();
+
+</script>
 
 </body>
 </html>
